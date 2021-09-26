@@ -5,7 +5,7 @@ plugins {
 
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-kapt'
-
+apply from: "../ktlint.gradle"
 
 android {
     compileSdkVersion 30
