@@ -17,8 +17,8 @@
 
     <fragment
         android:id="@+id/characters"
-        android:name="com.yrtelf.amicia.fragment.CharacterDetailFragment"
-        android:label="fragment_character_detail"
+        android:name="com.yrtelf.amicia.fragment.CharactersFragment"
+        android:label="fragment_characters"
         tools:layout="@layout/fragment_characters">
 
     </fragment>
