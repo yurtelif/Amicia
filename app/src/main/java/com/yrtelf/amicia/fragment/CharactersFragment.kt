@@ -6,26 +6,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.yrtelf.amicia.R
+import androidx.lifecycle.lifecycleScope
+import com.yrtelf.amicia.adapter.CharactersAdapter
+import com.yrtelf.amicia.databinding.FragmentCharactersBinding
 import com.yrtelf.amicia.viewModel.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
 class CharactersFragment : Fragment() {
 
     private val viewModel: CharactersViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.getCharacters()
-    }
+    private lateinit var binding: FragmentCharactersBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_characters, container, false)
+    ): View {
+        binding = FragmentCharactersBinding.inflate(inflater, container, false)
+        val adapter = CharactersAdapter()
+        binding.rvCharacters.adapter = adapter
+
+        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+            viewModel.characters.collectLatest { pagingData ->
+                adapter.submitData(pagingData)
+            }
+        }
+
+        return binding.root
     }
 }

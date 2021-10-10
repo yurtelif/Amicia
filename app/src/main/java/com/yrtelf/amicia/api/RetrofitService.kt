@@ -33,6 +33,7 @@ interface RetrofitService {
     suspend fun getCharacters(
         @Query("ts") ts: String,
         @Query("apikey") apiKey: String,
-        @Query("hash") hash: String
+        @Query("hash") hash: String,
+        @Query("offset") offset: Int
     ): CharactersResponse
 }

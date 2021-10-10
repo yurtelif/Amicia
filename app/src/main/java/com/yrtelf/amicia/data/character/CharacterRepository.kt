@@ -8,5 +8,5 @@ import javax.inject.Inject
 
 class CharacterRepository @Inject constructor(private val retrofitService: RetrofitService) {
 
-    suspend fun getCharacters() = retrofitService.getCharacters(TS, API_KEY, HASH)
+    suspend fun getCharacters() = retrofitService.getCharacters(TS, API_KEY, HASH, 0)
 }
