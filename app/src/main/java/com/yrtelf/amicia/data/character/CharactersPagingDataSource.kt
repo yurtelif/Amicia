@@ -19,16 +19,19 @@ class CharactersPagingDataSource(private val service: RetrofitService) : PagingS
             )
 
             val data = response.data
+            val results = data.results
 
-            var nextPageNumber: Int? = null
-            if (data.offset < data.total) {
-                nextPageNumber = nextPageNumber?.plus(20)
-            }
+            val nextKey =
+                if (results.isEmpty()) {
+                    null
+                } else {
+                    pageNumber + 20
+                }
 
             LoadResult.Page(
                 data = data.results.orEmpty(),
                 prevKey = null,
-                nextKey = nextPageNumber
+                nextKey = nextKey
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

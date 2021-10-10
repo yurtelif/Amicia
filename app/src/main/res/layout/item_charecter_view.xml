@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -10,7 +11,9 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin16"
+        app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -18,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/iv_character"
-                android:layout_width="250dp"
-                android:layout_height="300dp"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
                 app:image_url="@{character.thumbnail.path + `/portrait_xlarge.`+ character.thumbnail.extension}"
                 android:scaleType="center"
                 app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +33,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{character.name}"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/margin8"
+                android:layout_marginStart="@dimen/margin8"
+                tools:text="Spiderman"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/iv_character"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_description_character"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{character.description}"
+                tools:text="Spiderman asas fsdfs asdhjaf  sbajfsa"
+                android:textColor="@color/dark_gray"
+                android:layout_marginTop="@dimen/margin8"
+                app:layout_constraintStart_toEndOf="@id/iv_character"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_character"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin8"
+                android:gravity="start"
+                android:maxLines="7"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
