@@ -30,7 +30,7 @@ class CharactersViewModel @Inject constructor(val characterRepository: Character
             withContext(Dispatchers.Main) {
                 if (response.code == 200) {
                     characterList.postValue(response.data)
-                    Log.d("TAGa", "getCharacters: ")
+                    Log.d("TAGa", "getCharacters: " + response.data.count)
                 } else {
                     Log.d("TAGa", "error: ")
 

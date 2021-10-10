@@ -12,9 +12,9 @@ interface RetrofitService {
 
     companion object {
         private const val BASE_URL = "http://gateway.marvel.com/"
-        const val API_KEY = "cons"
-        const val TS = "cons"
-        const val HASH = "cons"
+        const val API_KEY = "2a1db7136ccfecd3327d3e90dd9ca419"
+        const val TS = "1633254291"
+        const val HASH = "363cdf38c8e83e7666d1a691be677076"
 
         fun create(): RetrofitService {
             val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }

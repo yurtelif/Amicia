@@ -86,6 +86,15 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
 
-//Coroutines
+    //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+
+    //paging3
+    implementation "androidx.paging:paging-runtime:3.1.0-alpha04"
+//optional dependency for RxJava support
+    implementation "androidx.paging:paging-rxjava2-ktx:3.1.0-alpha04"
+//optional room db
+    implementation "androidx.room:room-runtime:2.4.0-alpha05"
+    implementation "androidx.room:room-ktx:2.4.0-alpha05"
+    kapt "androidx.room:room-compiler:2.4.0-alpha05"
 }
