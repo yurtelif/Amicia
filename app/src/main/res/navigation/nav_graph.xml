@@ -3,16 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/search">
+    app:startDestination="@id/comics">
 
     <fragment
-        android:id="@+id/search"
-        android:name="com.yrtelf.amicia.fragment.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search">
-        <action
-            android:id="@+id/character2_to_detail"
-            app:destination="@+id/character_detail_fragment"/>
+        android:id="@+id/comics"
+        android:name="com.yrtelf.amicia.fragment.ComicsFragment"
+        android:label="fragment_comics"
+        tools:layout="@layout/fragment_comics">
     </fragment>
 
     <fragment
@@ -21,6 +18,13 @@
         android:label="fragment_characters"
         tools:layout="@layout/fragment_characters">
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/me"
+        android:name="com.yrtelf.amicia.fragment.MeFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_me">
     </fragment>
 
 </navigation>

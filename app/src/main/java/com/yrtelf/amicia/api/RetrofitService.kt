@@ -1,6 +1,7 @@
 package com.yrtelf.amicia.api
 
 import com.yrtelf.amicia.data.character.CharactersResponse
+import com.yrtelf.amicia.data.comic.ComicsResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -36,4 +37,12 @@ interface RetrofitService {
         @Query("hash") hash: String,
         @Query("offset") offset: Int
     ): CharactersResponse
+
+    @GET("/v1/public/comics")
+    suspend fun getComics(
+        @Query("ts") ts: String,
+        @Query("apikey") apiKey: String,
+        @Query("hash") hash: String,
+        @Query("offset") offset: Int
+    ): ComicsResponse
 }

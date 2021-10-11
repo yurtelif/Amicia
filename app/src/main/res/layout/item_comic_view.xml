@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="comic"
+            type="com.yrtelf.amicia.data.comic.ComicResult"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin16"
+        app:cardCornerRadius="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_character"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                app:image_url="@{comic.thumbnail.path + `/portrait_xlarge.`+ comic.thumbnail.extension}"
+                android:scaleType="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name_character"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{comic.title}"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/margin8"
+                android:layout_marginStart="@dimen/margin8"
+                tools:text="Spiderman"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                app:layout_constraintStart_toEndOf="@id/iv_character"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_description_character"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{comic.description}"
+                tools:text="Spiderman asas fsdfs asdhjaf  sbajfsa"
+                android:textColor="@color/dark_gray"
+                android:layout_marginTop="@dimen/margin8"
+                app:layout_constraintStart_toEndOf="@id/iv_character"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_character"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin8"
+                android:gravity="start"
+                android:maxLines="4" />
+
+            <TextView
+                android:id="@+id/tv_page_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{comic.pageCount}"
+                tools:text="150"
+                android:textColor="@color/dark_gray"
+                android:layout_marginTop="@dimen/margin8"
+                app:layout_constraintStart_toEndOf="@id/iv_character"
+                app:layout_constraintTop_toBottomOf="@id/tv_description_character"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin8"
+                android:gravity="start"
+                android:maxLines="7" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/margin16"
+                android:layout_marginBottom="@dimen/margin16"
+                app:srcCompat="@drawable/ic_baseline_playlist_add" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
