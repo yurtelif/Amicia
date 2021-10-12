@@ -11,6 +11,7 @@ import com.yrtelf.amicia.databinding.ItemComicViewBinding
 class ComicsAdapter : PagingDataAdapter<ComicResult, ComicsAdapter.ComicViewHolder>(
     COMIC_COMPARATOR
 ) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComicViewHolder {
         return ComicViewHolder(ItemComicViewBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
