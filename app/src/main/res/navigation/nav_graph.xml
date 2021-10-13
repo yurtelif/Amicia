@@ -10,6 +10,10 @@
         android:name="com.yrtelf.amicia.fragment.ComicsFragment"
         android:label="fragment_comics"
         tools:layout="@layout/fragment_comics">
+
+        <action
+            android:id="@+id/action_comic_to_comic_detail_fragment"
+            app:destination="@id/comic_detail_fragment" />
     </fragment>
 
     <fragment
@@ -25,6 +29,16 @@
         android:name="com.yrtelf.amicia.fragment.MeFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_me">
+    </fragment>
+
+    <fragment
+        android:id="@+id/comic_detail_fragment"
+        android:name="com.yrtelf.amicia.fragment.ComicDetailFragment"
+        android:label="fragment_comic_detail"
+        tools:layout="@layout/comic_detail_fragment">
+        <argument
+            android:name="comicId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

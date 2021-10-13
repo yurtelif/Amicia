@@ -5,6 +5,9 @@
 
     <data>
         <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
             name="comic"
             type="com.yrtelf.amicia.data.comic.ComicResult"/>
     </data>
@@ -12,6 +15,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="@{clickListener}"
         android:layout_margin="@dimen/margin16"
         app:cardCornerRadius="8dp">
 
